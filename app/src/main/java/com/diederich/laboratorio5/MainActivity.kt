@@ -25,8 +25,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.diederich.laboratorio5.ui.theme.barra
 import com.diederich.laboratorio5.ui.theme.cc
-import com.diederich.laboratorio5.ui.theme.cc
 
+import androidx.compose.runtime.*
+import androidx.compose.ui.draw.clip
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -113,7 +114,7 @@ fun my_components(){
         }
 
 
-            Spacer(modifier = Modifier.height(16.dp)) // Espacio entre los Rows y la Card
+            Spacer(modifier = Modifier.height(2.dp)) // Espacio entre los Rows y la Card
 
         //CARDS
             Row(
@@ -143,12 +144,14 @@ fun my_components(){
                             contentDescription = null, // Descripción del contenido para accesibilidad
                             modifier = Modifier
                                 .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
-                                .height(180.dp) // Altura de la imagen
+                                .height(150.dp) // Altura de la imagen
                                 .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                                .aspectRatio(1f) // Relación de aspecto cuadrada
+                                .clip(MaterialTheme.shapes.small) // Forma de círculo
 
                         )
 
-                        Spacer(modifier = Modifier.height(8.dp))
+                        Spacer(modifier = Modifier.height(2.dp))
 
                         Text(
                             text = "Title",
@@ -176,8 +179,8 @@ fun my_components(){
                 //Segundo card
                 Card(
                     modifier = Modifier
-                        .width(150.dp)
-                        .height(200.dp),
+                        .width(175.dp)
+                        .height(225.dp),
                     shape = RoundedCornerShape(11.dp), // Forma redondeada, ajusta el radio según lo desees
                     backgroundColor = cc
                 ) {
@@ -188,12 +191,14 @@ fun my_components(){
                         verticalArrangement = Arrangement.Top // Alinea los elementos en la parte superior
                     ) {
                         Image(
-                            painter = painterResource(id = R.drawable.cardimage1),
+                            painter = painterResource(id = R.drawable.micro),
                             contentDescription = null, // Descripción del contenido para accesibilidad
                             modifier = Modifier
                                 .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
-                                .height(120.dp) // Altura de la imagen
+                                .height(145.dp) // Altura de la imagen
                                 .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                                .aspectRatio(1f) // Relación de aspecto cuadrada
+                                .clip(MaterialTheme.shapes.small) // Forma de círculo
 
                         )
 
@@ -218,6 +223,250 @@ fun my_components(){
                     // Puedes agregar otro elemento en esta fila si lo necesitas
                 }
             }
+
+
+        Spacer(modifier = Modifier.height(16.dp)) // Espacio entre los dos Rows
+        //Segundo row
+        //CARDS
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+
+        ) {
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Card(
+                modifier = Modifier
+                    .width(175.dp)
+                    .height(225.dp),
+                shape = RoundedCornerShape(11.dp), // Forma redondeada, ajusta el radio según lo desees
+                backgroundColor = cc
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.Top // Alinea los elementos en la parte superior
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.planta),
+                        contentDescription = null, // Descripción del contenido para accesibilidad
+                        modifier = Modifier
+                            .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
+                            .height(150.dp) // Altura de la imagen
+                            .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                            .aspectRatio(1f) // Relación de aspecto cuadrada
+                            .clip(MaterialTheme.shapes.small) // Forma de círculo
+
+                    )
+
+                    Spacer(modifier = Modifier.height(2.dp))
+
+                    Text(
+                        text = "Title",
+                        style = TextStyle(
+                            fontSize = 16.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+
+                    Text(
+                        text = "Supporting text",
+                        style = TextStyle(
+                            fontSize = 14.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+                }
+                // Puedes agregar otro elemento en esta fila si lo necesitas
+            }
+
+
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            //Segundo card
+            Card(
+                modifier = Modifier
+                    .width(175.dp)
+                    .height(225.dp),
+                shape = RoundedCornerShape(11.dp), // Forma redondeada, ajusta el radio según lo desees
+                backgroundColor = cc
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.Top // Alinea los elementos en la parte superior
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.azul),
+                        contentDescription = null, // Descripción del contenido para accesibilidad
+                        modifier = Modifier
+                            .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
+                            .height(145.dp) // Altura de la imagen
+                            .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                            .aspectRatio(1f) // Relación de aspecto cuadrada
+                            .clip(MaterialTheme.shapes.small) // Forma de círculo
+
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = "Title",
+                        style = TextStyle(
+                            fontSize = 16.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+
+                    Text(
+                        text = "Supporting text",
+                        style = TextStyle(
+                            fontSize = 14.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+                }
+                // Puedes agregar otro elemento en esta fila si lo necesitas
+            }
+        }
+
+        Spacer(modifier = Modifier.height(16.dp)) // Espacio entre los row y el texto
+        //TEXTO
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = "     All Concerts",
+                modifier = Modifier
+                    .weight(1f)
+                    .height(40.dp),
+                style = TextStyle(
+                    fontSize = 17.sp,
+                    color = Color.Black
+
+                )
+
+            )
+        }
+
+
+
+        //CARDS
+        Row(
+            modifier = Modifier
+                .fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically
+
+        ) {
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            Card(
+                modifier = Modifier
+                    .width(175.dp)
+                    .height(225.dp),
+                shape = RoundedCornerShape(11.dp), // Forma redondeada, ajusta el radio según lo desees
+                backgroundColor = cc
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.Top // Alinea los elementos en la parte superior
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.cardimage1),
+                        contentDescription = null, // Descripción del contenido para accesibilidad
+                        modifier = Modifier
+                            .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
+                            .height(150.dp) // Altura de la imagen
+                            .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                            .aspectRatio(1f) // Relación de aspecto cuadrada
+                            .clip(MaterialTheme.shapes.small) // Forma de círculo
+
+                    )
+
+                    Spacer(modifier = Modifier.height(2.dp))
+
+                    Text(
+                        text = "Title",
+                        style = TextStyle(
+                            fontSize = 16.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+
+                    Text(
+                        text = "Supporting text",
+                        style = TextStyle(
+                            fontSize = 14.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+                }
+                // Puedes agregar otro elemento en esta fila si lo necesitas
+            }
+
+
+
+            Spacer(modifier = Modifier.width(16.dp))
+
+            //Segundo card
+            Card(
+                modifier = Modifier
+                    .width(175.dp)
+                    .height(225.dp),
+                shape = RoundedCornerShape(11.dp), // Forma redondeada, ajusta el radio según lo desees
+                backgroundColor = cc
+            ) {
+                Column(
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .padding(16.dp),
+                    verticalArrangement = Arrangement.Top // Alinea los elementos en la parte superior
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.cardimage1),
+                        contentDescription = null, // Descripción del contenido para accesibilidad
+                        modifier = Modifier
+                            .fillMaxWidth() // La imagen se extenderá en toda la parte superior de la Card
+                            .height(145.dp) // Altura de la imagen
+                            .padding(bottom = 8.dp) // Espacio inferior entre la imagen y los textos
+                            .aspectRatio(1f) // Relación de aspecto cuadrada
+                            .clip(MaterialTheme.shapes.small) // Forma de círculo
+
+                    )
+
+                    Spacer(modifier = Modifier.height(8.dp))
+
+                    Text(
+                        text = "Title",
+                        style = TextStyle(
+                            fontSize = 16.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+
+                    Text(
+                        text = "Supporting text",
+                        style = TextStyle(
+                            fontSize = 14.sp, // Ajusta el tamaño del texto aquí
+                            color = Color.Black // Color del texto
+                        )
+                    )
+                }
+                // Puedes agregar otro elemento en esta fila si lo necesitas
+            }
+        }
+
+
     }
 }
 

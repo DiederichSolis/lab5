@@ -160,7 +160,8 @@ fun componentsscreen(){
                     fontWeight = androidx.compose.ui.text.font.FontWeight.Bold
                 )
                 Text(
-                    text = "Maddison Square Garden",
+                    text = "Maddison Square Garden" +
+                            "",
                     fontSize = 14.sp
                 )
             }
